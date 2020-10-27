@@ -15,25 +15,7 @@ public class ModifyData {
 		Session session = HibernateUtil.currentSession();
 		Scanner sc = new Scanner(System.in);
 		try {
-			session.beginTransaction();
-			System.out.println("Enter id to modify record:");
-			Users user = (Users) session.get(Users.class, sc.nextInt());
-
-			if (user != null) {
-				System.out.println("Enter the new email to update");
-				user.setEmail(sc.next());
-				session.saveOrUpdate(user);
-
-				session.getTransaction().commit();
-				System.out.println("Record updated successfully..!!");
-			} else {
-				System.out.println("Record not found for given id, please enter a correct id");
-			}
-		} catch (SessionException e) {
-			System.out.println(e);
-		} finally {
-			HibernateUtil.closeSession();
-		}
+			s
 
 	}
 }
